@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+timm
+pillow
+python-multipart

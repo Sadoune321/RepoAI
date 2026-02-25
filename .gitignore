@@ -1,0 +1,14 @@
+# Ignorer l'environnement virtuel
+venv/
+.venv/
+
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+
+# Fichiers VS Code
+.vscode/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
