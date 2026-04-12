@@ -3,3 +3,4 @@ uvicorn
 timm
 pillow
 python-multipart
+pydantic-settings
