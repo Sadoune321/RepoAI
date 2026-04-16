@@ -1,16 +1,16 @@
-FROM python:3.10-slim
+FROM python:3.10-bullseye
 
 WORKDIR /app
 
+# Pas besoin d'apt-get, Python 3.10-bullseye a déjà les libs système
+
 COPY requirements.txt .
 
-
-RUN pip install --no-cache-dir --default-timeout=1000 \
-    torch torchvision \
-    --index-url https://download.pytorch.org/whl/cpu
-
-
-RUN pip install --no-cache-dir --default-timeout=1000 -r requirements.txt
+RUN pip install --no-cache-dir \
+    torch==2.1.0+cpu \
+    torchvision==0.16.0+cpu \
+    --index-url https://download.pytorch.org/whl/cpu \
+    && pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
