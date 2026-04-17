@@ -4,6 +4,15 @@ services:
     container_name: skin_api
     ports:
       - "8000:8000"
-    volumes:
-      - ./models:/app/models
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    container_name: skin_ngrok
+    command: http api:8000
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    ports:
+      - "4040:4040"
+    depends_on:
+      - api
     restart: always

@@ -45,7 +45,7 @@ def get_model() -> nn.Module:
                 settings.MODEL_PATH,
                 map_location=settings.DEVICE
             )
-            print(" Modèle chargé (format complet avec classe)")
+            print("✓ Modèle chargé (format complet avec classe)")
             
         except AttributeError as e:
             print(f" Erreur de classe: {e}")
